@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blooming Rose Surprise</title>
+    <style>
+        body {
+            display: flex;
+            font-style: italic;
+            background-image: url("the-red-roses-in-the-garden-with-ai-generated-free-photo.jpg");
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+
+        .qis {
+            transition: opacity 0.5s ease;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .qis.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .rose {
+            width: 100px;
+            height: 100px;
+            background-image: url('images-removebg-preview (1).png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: transform 1s ease-in-out, opacity 1s;
+        }
+
+        .rose.bloom {
+            transform: scale(2) rotate(360deg);
+            opacity: 1;
+        }
+
+        .message {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: white;
+            opacity: 0;
+            transition: opacity 2s ease;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .message.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="qis">click the love babygirl</div>
+    <div class="rose" id="rose" title="Click me!"></div>
+    <div class="message" id="message">
+        Like this rose, my love for you blooms more beautifully each day. 🌹❤️
+    </div>
+
+    <script>
+        rose.addEventListener('click', () => {
+            rose.classList.add('bloom');
+            const qis = document.querySelector('.qis');
+            qis.classList.add('hide');  // hilang perlahan
+            setTimeout(() => {
+                message.classList.add('show');
+            }, 150);
+        });
+
+    </script>
+
+</body>
+
+</html>
